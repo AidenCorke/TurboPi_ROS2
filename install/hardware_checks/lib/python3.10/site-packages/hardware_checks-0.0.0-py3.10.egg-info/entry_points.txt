@@ -1,0 +1,3 @@
+[console_scripts]
+expansionboard_check = hardware_checks.expansionboard_check:main
+

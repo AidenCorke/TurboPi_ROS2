@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: hardware-checks
+Version: 0.0.0
+Summary: Package containing functions to check hardware functionality and communication
+Home-page: UNKNOWN
+Maintainer: aiden
+Maintainer-email: aiden.corke@gmail.com
+License: Apache-2.0
+Platform: UNKNOWN
+Provides-Extra: test
+License-File: LICENSE
+
+UNKNOWN
+
