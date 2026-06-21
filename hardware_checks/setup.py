@@ -24,7 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'expansionboard_check = hardware_checks.expansionboard_check:main',
+            'uart_check = hardware_checks.uart_check:main',
+            'mecanum_kinematics = hardware_checks.mecanum_kinematics:main',
         ],
     },
 )
