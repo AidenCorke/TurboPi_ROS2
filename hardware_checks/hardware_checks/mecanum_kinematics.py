@@ -14,7 +14,7 @@ from geometry_msgs.msg import Twist
 from std_msgs.msg import Float32MultiArray
 import time
 
-# ===== Class =====
+# ===== Class / Node =====
 class MecanumKinematics(Node):
 
     # === Node Setup ===

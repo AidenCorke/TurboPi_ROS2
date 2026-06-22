@@ -26,6 +26,7 @@ setup(
         'console_scripts': [
             'uart_check = hardware_checks.uart_check:main',
             'mecanum_kinematics = hardware_checks.mecanum_kinematics:main',
+            'motor_driver = hardware_checks.motor_driver:main',
         ],
     },
 )
