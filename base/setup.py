@@ -15,7 +15,7 @@ setup(
     zip_safe=True,
     maintainer='aidencorke',
     maintainer_email='aiden.corke@gmail.com',
-    description='TODO: Package description',
+    description='This package contains motor drivers, wheel kinematics, odom, and base_link TF.',
     license='Apache-2.0',
     extras_require={
         'test': [
@@ -24,6 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'mecanum = base.mecanum_kinematics:main',
+            'motor_driver = base.motor_driver:main',
         ],
     },
 )
