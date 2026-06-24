@@ -74,6 +74,9 @@ class MecanumKinematics(Node):
             10                  # timer
         )
 
+        # ----- Declare Node is Live -----
+        self.get_logger().info('Kinematic node live and listening to /cmd_vel')
+
 
     # === Functions ===
 
@@ -120,13 +123,16 @@ class MecanumKinematics(Node):
 
         self.prev_speeds = limited_speeds
 
+        # --- Convert to Duty ---
+        duty_speeds = [(s / self.max_wheel_speed) * 100 for s in limited_speeds]
+
         # --- Publish ---
         msg_out = Float32MultiArray()
-        msg_out.data = limited_speeds
+        msg_out.data = duty_speeds
         self.wheel_pub.publish(msg_out)
 
         self.get_logger().debug(
-            f"cmd_vel -> raw: {raw_speeds}, limited: {limited_speeds}"
+            f"cmd_vel -> raw: {raw_speeds} \nlimited: {limited_speeds} \nduty speeds: {duty_speeds}"
         )
 
 

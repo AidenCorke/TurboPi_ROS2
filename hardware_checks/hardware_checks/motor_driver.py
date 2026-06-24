@@ -71,6 +71,8 @@ class MotorDriver(Node):
     # === Node Setup ===
     def __init__(self):
         super().__init__('motor_driver')
+        # ----- Misc Parameters -----
+        self.declare_parameter('wheel_directions',[-1, 1, -1, 1])
 
         # ----- Serial Port Parameters -----
         # --- Declare Parameters ---
@@ -86,6 +88,7 @@ class MotorDriver(Node):
         port = self.get_parameter('port').value
         baud = self.get_parameter('baud').value
         self.rate = self.get_parameter('rate').value
+        self.wheel_directions = self.get_parameter('wheel_directions').value
 
         # ----- Open Serial Port -----
         try:
@@ -117,8 +120,10 @@ class MotorDriver(Node):
     def wheel_callback(self, msg):
         """Checks length of message and stores as attribute if correct length."""
         if len(msg.data) == 4:
-            self.speeds = list(msg.data)
-            self.get_logger().info(f"Recieved wheel speeds: {self.speeds}")
+            speeds = list(msg.data)
+            corrected_speeds = [d * s for d, s in zip(self.wheel_directions, speeds)]
+            self.speeds = corrected_speeds
+            #self.get_logger().info(f"Recieved wheel speeds: {self.speeds}")
 
     def send_packet(self):
         """Send packets to builder or raises error if fails."""
