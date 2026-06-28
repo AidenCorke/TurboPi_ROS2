@@ -1,0 +1,27 @@
+<xacro:macro name="sensor_mounts" params="">
+
+  <!-- IMU -->
+  <link name="imu_link"/>
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0.05"/>
+  </joint>
+
+  <!-- Ultrasonic -->
+  <link name="ultrasonic_link"/>
+  <joint name="ultrasonic_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ultrasonic_link"/>
+    <origin xyz="0.12 0 0.03"/>
+  </joint>
+
+  <!-- Line follower -->
+  <link name="line_follower_link"/>
+  <joint name="line_follower_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="line_follower_link"/>
+    <origin xyz="0.10 0 -0.02"/>
+  </joint>
+
+</xacro:macro>
