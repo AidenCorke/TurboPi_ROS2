@@ -26,9 +26,9 @@ class MecanumKinematics(Node):
         self.declare_parameters(
             namespace='',
             parameters=[
-                ('wheelbase', 0.1380),          # meters
+                ('wheelbase', 0.120),          # meters
                 ('track_width', 0.1410),         # meters
-                ('wheel_diameter', 0.065),      # meters
+                ('wheel_diameter', 0.06),      # meters
             ]
         )
          # --- Motion Limit Parameters --- 

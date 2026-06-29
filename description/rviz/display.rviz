@@ -1,0 +1,50 @@
+Panels:
+  - Class: rviz/Displays
+    Name: Displays
+  - Class: rviz/Views
+    Name: Views
+
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz/Grid
+      Name: Grid
+      Enabled: true
+      Cell Size: 0.1
+      Plane: XY
+      Color: 160; 160; 160
+
+    - Class: rviz/RobotModel
+      Name: RobotModel
+      Enabled: true
+      Robot Description: robot_description
+      Visual Enabled: true
+      Collision Enabled: false
+
+    - Class: rviz/TF
+      Name: TF
+      Enabled: true
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Marker Scale: 0.05
+
+    - Class: rviz/Axes
+      Name: Axes
+      Enabled: true
+      Length: 0.1
+      Radius: 0.005
+
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: base_link
+
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Name: Orbit View
+      Distance: 1.0
+      Pitch: 0.5
+      Yaw: 0.5
+      Target Frame: base_link
+

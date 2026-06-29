@@ -1,29 +1,67 @@
-<xacro:macro name="camera_gimbal" params="">
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!-- Pan joint -->
-  <link name="gimbal_pan"/>
-  <joint name="gimbal_pan_joint" type="continuous">
-    <parent link="base_link"/>
-    <child link="gimbal_pan"/>
-    <origin xyz="0 0 0.10"/>
-    <axis xyz="0 0 1"/>
-  </joint>
+  <xacro:macro name="camera_gimbal" params="">
 
-  <!-- Tilt joint -->
-  <link name="gimbal_tilt"/>
-  <joint name="gimbal_tilt_joint" type="continuous">
-    <parent link="gimbal_pan"/>
-    <child link="gimbal_tilt"/>
-    <origin xyz="0 0 0.03"/>
-    <axis xyz="0 1 0"/>
-  </joint>
+    <!-- PAN LINK -->
+    <link name="gimbal_pan">
+      <visual>
+        <origin xyz="0.04 0 0.05" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.015" length="0.02"/>
+        </geometry>
+        <material name="dark_gray">
+          <color rgba="0.3 0.3 0.3 1"/>
+        </material>
+      </visual>
+    </link>
 
-  <!-- Camera -->
-  <link name="camera_link"/>
-  <joint name="camera_joint" type="fixed">
-    <parent link="gimbal_tilt"/>
-    <child link="camera_link"/>
-    <origin xyz="0.02 0 0"/>
-  </joint>
+    <joint name="gimbal_pan_joint" type="continuous">
+      <parent link="base_link"/>
+      <child link="gimbal_pan"/>
+      <origin xyz="0.04 0 0.05" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/> <!-- yaw -->
+    </joint>
 
-</xacro:macro>
+    <!-- TILT LINK -->
+    <link name="gimbal_tilt">
+      <visual>
+        <origin xyz="0.04 0 0.075" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.015" length="0.02"/>
+        </geometry>
+        <material name="dark_gray">
+          <color rgba="0.3 0.3 0.3 1"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="gimbal_tilt_joint" type="continuous">
+      <parent link="gimbal_pan"/>
+      <child link="gimbal_tilt"/>
+      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/> <!-- pitch -->
+    </joint>
+
+    <!-- CAMERA LINK -->
+    <link name="camera_link">
+      <visual>
+        <origin xyz="0.10 0 0.075" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.04 0.04 0.04"/>
+        </geometry>
+        <material name="blue">
+          <color rgba="0.2 0.2 0.8 1"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="camera_joint" type="fixed">
+      <parent link="gimbal_tilt"/>
+      <child link="camera_link"/>
+      <origin xyz="0.06 0 0" rpy="0 0 0"/>
+    </joint>
+
+  </xacro:macro>
+
+</robot>

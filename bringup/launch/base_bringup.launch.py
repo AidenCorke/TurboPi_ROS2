@@ -24,6 +24,7 @@ def generate_launch_description():
         output='screen',
         parameters=[motor_params]
     )
+    
     # --- Wheel Kinematics Node ---
     mecanum_kinematics = Node(
         package='base',
@@ -32,8 +33,9 @@ def generate_launch_description():
         output='screen',
         parameters=[kinematics_params]
     )
+    
 
     return LaunchDescription([
         motor_driver,
-        mecanum_kinematics
+        mecanum_kinematics,
     ])

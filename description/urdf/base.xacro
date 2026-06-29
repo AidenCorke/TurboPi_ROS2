@@ -1,22 +1,35 @@
-<xacro:macro name="base_link" params="">
-  <link name="base_link">
-    <visual>
-      <geometry>
-        <box size="0.25 0.20 0.05"/>
-      </geometry>
-      <material name="gray">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
-    </visual>
-    <collision>
-      <geometry>
-        <box size="0.25 0.20 0.05"/>
-      </geometry>
-    </collision>
-    <inertial>
-      <mass value="2.0"/>
-      <inertia ixx="0.02" iyy="0.02" izz="0.03"
-               ixy="0" ixz="0" iyz="0"/>
-    </inertial>
-  </link>
-</xacro:macro>
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="base_link" params="">
+
+    <!-- Base link at wheel axle height -->
+    <link name="base_link">
+      <visual>
+        <origin xyz="0 0 0.0175"/>
+        <geometry>
+          <box size="0.20 0.095 0.065"/>
+        </geometry>
+        <material name="gray">
+          <color rgba="0.5 0.5 0.5 1"/>
+        </material>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0.0175"/>
+        <geometry>
+          <box size="0.20 0.095 0.065"/>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass value="2.0"/>
+        <origin xyz="0 0 0.0175"/>
+        <inertia ixx="0.02" iyy="0.02" izz="0.03"
+                 ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+    </link>
+
+  </xacro:macro>
+
+</robot>
