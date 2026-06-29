@@ -17,7 +17,7 @@ def generate_launch_description():
 
     # ===== Launch Arguments =====
     # --- Model Path ---
-    DeclareLaunchArgument(
+    arg_model = DeclareLaunchArgument(
         'model',
         default_value=urdf_path,
         description='Absolute path to robot URDF'
@@ -55,6 +55,7 @@ def generate_launch_description():
 
 
     return LaunchDescription([
+        arg_model,
         robot_state_pub,
         joint_state_pub,
         rviz,
