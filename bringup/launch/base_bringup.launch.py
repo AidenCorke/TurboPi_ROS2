@@ -34,8 +34,16 @@ def generate_launch_description():
         parameters=[kinematics_params]
     )
     
+    # --- Dead Reckoning Odom Node ---
+    odom = Node(
+        package='base',
+        executable='dead_reckoning_odom',
+        name='dead_reckoning_dom',
+        output='screen',
+    )    
 
     return LaunchDescription([
         motor_driver,
         mecanum_kinematics,
+        odom,
     ])

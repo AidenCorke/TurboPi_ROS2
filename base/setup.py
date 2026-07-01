@@ -26,6 +26,7 @@ setup(
         'console_scripts': [
             'mecanum_kinematics = base.mecanum_kinematics:main',
             'motor_driver = base.motor_driver:main',
+            'dead_reckoning_odom = base.dead_reckoning_odom:main'
         ],
     },
 )

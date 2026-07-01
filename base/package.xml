@@ -3,7 +3,7 @@
 <package format="3">
   <name>base</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>This package contains base control and driver nodes.</description>
   <maintainer email="aiden.corke@gmail.com">aidencorke</maintainer>
   <license>Apache-2.0</license>
 
