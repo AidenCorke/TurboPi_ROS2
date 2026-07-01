@@ -24,7 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'mecanum = base.mecanum_kinematics:main',
+            'mecanum_kinematics = base.mecanum_kinematics:main',
             'motor_driver = base.motor_driver:main',
         ],
     },
