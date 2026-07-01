@@ -32,15 +32,15 @@ def generate_launch_description():
         output='screen',
         parameters=[{
             'use_sim_time': False,
-            'robot_description': LaunchConfiguration('model')
+            'robot_description': Command(['xacro', ' ', LaunchConfiguration('model')])
         }]         
     )
     
     # --- Joint State Publisher ---
     joint_state_pub = Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-        name='joint_state_publisher',
+        package='joint_state_publisher_gui',
+        executable='joint_state_publisher_gui',
+        name='joint_state_publisher_gui',
         output='screen'        
     )
     

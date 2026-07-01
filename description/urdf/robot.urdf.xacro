@@ -1,16 +1,17 @@
 <?xml version="1.0"?>
-<robot name="mecanum_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="turbopi" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Include modular components -->
-  <xacro:include filename="$(find description)/urdf/base.xacro"/>
-  <xacro:include filename="$(find description)/urdf/wheels.xacro"/>
-  <xacro:include filename="$(find description)/urdf/sensors.xacro"/>
-  <xacro:include filename="$(find description)/urdf/camera_gimbal.xacro"/>
+  <xacro:include filename="base.xacro"/>
+  <xacro:include filename="wheels.xacro"/>
+  <xacro:include filename="sensors.xacro"/>
+  <xacro:include filename="camera_gimbal.xacro"/>
+
 
   <!-- Instantiate components -->
-  <base_link/>
-  <mecanum_wheels/>
-  <sensor_mounts/>
-  <camera_gimbal/>
+  <xacro:base_link/>
+  <xacro:mecanum_wheels/>
+  <xacro:sensor_mounts/>
+  <xacro:camera_gimbal/>
 
 </robot>
