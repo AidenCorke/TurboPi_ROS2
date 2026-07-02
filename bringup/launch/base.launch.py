@@ -34,7 +34,7 @@ def generate_launch_description():
         parameters=[kinematics_params]
     )
     
-    # --- Dead Reckoning Odom Node ---
+    # --- Odom Node ---
     odom = Node(
         package='base',
         executable='dead_reckoning_odom',

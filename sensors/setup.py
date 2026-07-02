@@ -15,7 +15,7 @@ setup(
     zip_safe=True,
     maintainer='aidencorke',
     maintainer_email='aiden.corke@gmail.com',
-    description='TODO: Package description',
+    description='This package contains sensor class files and control nodes.',
     license='Apache-2.0',
     extras_require={
         'test': [
@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'ultrasonic_sensor = sensors.ultrasonic_controller:main',
         ],
     },
 )

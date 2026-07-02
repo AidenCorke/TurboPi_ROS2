@@ -1,5 +1,5 @@
 ##########################################
-# ===== Mecanum Kinematic =====
+# ===== Dead Reckoning Odometry =====
 '''
 This file contains open loop odometry logic node. Using velocity commands to create dead reckoning positional estimation.
 

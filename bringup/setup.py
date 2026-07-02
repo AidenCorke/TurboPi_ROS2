@@ -19,7 +19,7 @@ setup(
     zip_safe=True,
     maintainer='aidencorke',
     maintainer_email='aiden.corke@gmail.com',
-    description='TODO: Package description',
+    description='This package contains laucnh files for Turbopi robot car.',
     license='Apache-2.0',
     extras_require={
         'test': [

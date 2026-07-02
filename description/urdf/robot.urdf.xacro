@@ -11,7 +11,7 @@
   <!-- Instantiate components -->
   <xacro:base_link/>
   <xacro:mecanum_wheels/>
-  <xacro:sensor_mounts/>
-  <xacro:camera_gimbal/>
+  <xacro:ultrasonic_link/>
+  <xacro:line_follower_link/>
 
 </robot>
