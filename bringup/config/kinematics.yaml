@@ -1,11 +1,14 @@
-# === Geometry ===
-wheelbase:      0.1380     # meters
-track_width:    0.1410     # meters
-wheel_diameter: 0.065      # meters
+kinematics:
+  ros__parameters:
 
-# === Motion Limits ===
-max_vx: 1.0            # m/s
-max_vy: 1.0            # m/s
-max_wz: 1.0            # rad/s
-max_wheel_speed: 1.0   # m/s    
-max_wheel_accel: 1.5   # m/s^2  
+    # === Geometry ===
+    wheelbase:      0.1380     # meters
+    track_width:    0.1410     # meters
+    wheel_diameter: 0.065      # meters
+
+    # === Motion Limits ===
+    max_vx: 1.0            # m/s
+    max_vy: 1.0            # m/s
+    max_wz: 1.0            # rad/s
+    max_wheel_speed: 1.0   # m/s    
+    max_wheel_accel: 1.5   # m/s^2  

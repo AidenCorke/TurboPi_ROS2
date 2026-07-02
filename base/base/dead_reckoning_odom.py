@@ -60,10 +60,18 @@ class DeadReckonOdom(Node):
         
         # ----- Timer -----
         self.last_time = self.get_clock().now()
-        self.timer = self.create_timer(1.0 / rate, self.update)        
-
+        self.timer = self.create_timer(1.0 / rate, self.update)   
+        
+        # ----- Initialization Message -----     
+        self.get_logger().info("Publishing odometry...")
 
     # === Functions ===
+    
+    # --- cmd_vel unpacking ---
+    def cmd_vel_callback(self, msg):
+        self.vx = msg.linear.x
+        self.vy = msg.linear.y
+        self.wz = msg.angular.z
 
     # ----- Update Odometry -----
     def update(self):
